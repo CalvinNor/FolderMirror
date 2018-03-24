@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+
 /**
  * Base Fragment to inherit from.
  * All common code and abstraction goes here.
@@ -23,7 +25,9 @@ public abstract class BaseFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        return getInflatedView(inflater);
+        View rootView = getInflatedView(inflater);
+        ButterKnife.bind(this, rootView);
+        return rootView;
     }
 
     /**

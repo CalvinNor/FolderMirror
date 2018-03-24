@@ -29,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setupToolbar();
 
         // Setup the root fragment only on first launch
-        if (savedInstanceState == null) return;
+        if (savedInstanceState != null) return;
         setupFragment();
     }
 
